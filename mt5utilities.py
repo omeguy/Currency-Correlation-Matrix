@@ -8,8 +8,6 @@ import json
 import random
 import schedule
 import time
-
-
 import logging
 
 class AppLogger:
@@ -23,12 +21,12 @@ class AppLogger:
         # File handler
         file_handler = logging.FileHandler(log_file)
         file_handler.setFormatter(formatter)
-        file_handler.setLevel(level)
+        file_handler.setLevel(level)  # Set file handler level to INFO or as specified
 
         # Console handler
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
-        console_handler.setLevel(logging.ERROR)  # Default to only showing errors on console
+        console_handler.setLevel(level)  # Set console handler level to INFO or as specified
 
         # Add handlers to the logger
         if not self.logger.handlers:  # Avoid adding handlers multiple times
